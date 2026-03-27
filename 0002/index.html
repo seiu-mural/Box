@@ -1,15 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Note</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box 0001 - Photos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        header {
+            background-color: #0077cc;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.5em;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            padding: 10px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        .back-link {
+            text-align: center;
+            margin: 15px 0;
+        }
+        .back-link a {
+            text-decoration: none;
+            color: #0077cc;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <h1>📦 Contents of the Box</h1>
-    <ul>
-        <li><a href="0001/">Box 0001</a></li>
-        <li><a href="0002/">Box 0002</a></li>
-        <li><a href="0003/">Box 0003</a></li>
-    </ul>
+    <header>📦 Box 0001</header>
+
+    <div class="gallery">
+        <img src="photo1.jpg" alt="Photo 1">
+        
+        <!-- Add more photos here -->
+    </div>
+
+    <div class="back-link">
+        <a href="../index.html">⬅ Back to all boxes</a>
+    </div>
 </body>
 </html>
