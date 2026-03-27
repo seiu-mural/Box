@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: #f7f7f7;
+    margin: 0;
+}
+
+header {
+    background: #0077cc;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 10px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<header id="title">📦 Box</header>
+
+<div class="gallery" id="gallery"></div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const box = params.get("box");
+
+document.getElementById("title").innerText = "📦 Box " + box;
+
+const gallery = document.getElementById("gallery");
+
+// ⚡ quantidade máxima de fotos que você quer testar
+for (let i = 1; i <= 20; i++) {
+    const img = document.createElement("img");
+    img.src = box + "/photo" + i + ".jpg";
+
+    img.onerror = () => img.remove(); // remove se não existir
+
+    gallery.appendChild(img);
+}
+</script>
+
+</body>
+</html>
